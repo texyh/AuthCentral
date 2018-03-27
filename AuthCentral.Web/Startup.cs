@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using AuthCentral.Web.Data;
 using AuthCentral.Web.Models;
+using AuthCentral.Web.Providers;
 using dotenv.net.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 
@@ -41,7 +42,7 @@ namespace AuthCentral.Web
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseNpgsql(AppConfig.DbConnection));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -62,14 +63,14 @@ namespace AuthCentral.Web
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString, // change to postgress
+                        b.UseNpgsql(AppConfig.DbConnection, // change to postgress
                             sql => sql.MigrationsAssembly(migrationsAssembly));
                 })
                 // this adds the operational data from DB (codes, tokens, consents)
                 .AddOperationalStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseSqlServer(connectionString, // change to postgres
+                        b.UseNpgsql(AppConfig.DbConnection, // change to postgres
                             sql => sql.MigrationsAssembly(migrationsAssembly));
 
                     // this enables automatic token cleanup. this is optional.
