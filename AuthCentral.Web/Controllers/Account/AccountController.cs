@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using AuthCentral.Web.Models;
 
-namespace IdentityServer4.Quickstart.UI
+namespace AuthCentral.Web
 {
     [SecurityHeaders]
     public class AccountController : Controller
