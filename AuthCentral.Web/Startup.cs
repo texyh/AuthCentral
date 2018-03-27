@@ -29,7 +29,7 @@ namespace AuthCentral.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+            //string connectionString = Configuration.GetConnectionString("DefaultConnection");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             var envFile = Environment.IsDevelopment() ? ".env" : "test.env";
