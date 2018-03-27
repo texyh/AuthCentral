@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{F76D5CDE-C131-4E4E-98D1-D9F6D01935A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{57622869-4B4E-4B60-8FE6-ACC53F02B72B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Infrastructure", "3.Infrastructure", "{02709BBB-87FA-4D3F-A2C0-2B9A1821AE1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Tests", "4.Tests", "{87136B00-7033-4818-910B-1E2C01173B51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthCentral.Web", "AuthCentral.Web\AuthCentral.Web.csproj", "{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B02A1AF-E2B2-4D0B-8B7C-CB7198E73A16} = {F76D5CDE-C131-4E4E-98D1-D9F6D01935A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5755F6AC-E322-4331-99E3-2F72387CBDD3}
