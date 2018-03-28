@@ -67,10 +67,6 @@ namespace AuthCentral.Web
                         Url = string.Empty
                     }
                 });
-
-                var basePath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "AuthCentral.Web.xml");
-
-                opt.IncludeXmlComments(string.Format(basePath));
             });
 
             var builder = services.AddIdentityServer(options =>
