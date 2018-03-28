@@ -13,6 +13,8 @@ using AuthCentral.Web.Models;
 using AuthCentral.Web.Providers;
 using dotenv.net.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace AuthCentral.Web
 {
@@ -49,7 +51,27 @@ namespace AuthCentral.Web
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-            
+
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1", new Info
+                {
+                    Title = "Auth Central",
+                    Version = "v1",
+                    Description = "A Single Signon system",
+                    TermsOfService = "None",
+                    Contact = new Contact
+                    {
+                        Name = "Onwuzulike Emeka",
+                        Email = "Onwuzulikee1@gmail.com",
+                        Url = string.Empty
+                    }
+                });
+
+                var basePath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "AuthCentral.Web.xml");
+
+                opt.IncludeXmlComments(string.Format(basePath));
+            });
 
             var builder = services.AddIdentityServer(options =>
                 {
@@ -112,6 +134,12 @@ namespace AuthCentral.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "Auth Central");
+            });
 
             Seed.InitializeDatabase(app);
 
