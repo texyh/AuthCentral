@@ -67,7 +67,7 @@ namespace AuthCentral.Web
                         IdentityServerConstants.StandardScopes.Profile,
                         "authCentralApi"
                     }
-                }
+                },
 
                 // resource owner password grant client
                 //new Client
@@ -83,30 +83,30 @@ namespace AuthCentral.Web
                 //},
 
                 //// OpenID Connect hybrid flow and client credentials client (MVC)
-                //new Client
-                //{
-                //    ClientId = "mvc",
-                //    ClientName = "MVC Client",
-                //    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                new Client
+                {
+                    ClientId = "mvc",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
-                //    RequireConsent = true,
+                    RequireConsent = true,
 
-                //    ClientSecrets = 
-                //    {
-                //        new Secret("secret".Sha256())
-                //    },
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
 
-                //    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                //    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
-                //    AllowedScopes =
-                //    {
-                //        IdentityServerConstants.StandardScopes.OpenId,
-                //        IdentityServerConstants.StandardScopes.Profile,
-                //        "api1"
-                //    },
-                //    AllowOfflineAccess = true
-                //}
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
+                }
             };
         }
     }
