@@ -9,13 +9,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using System.Text;
+using AuthCentral.Core.Repositories;
 using AuthCentral.Web.Data;
 using AuthCentral.Web.Models;
 using AuthCentral.Web.Providers;
+using AutoMapper;
 using dotenv.net.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
+using AuthCentral.Services;
+using AuthCentral.Core.Services;
+using AuthCentral.Data.Ids4;
 
 namespace AuthCentral.Web
 {
@@ -52,6 +57,7 @@ namespace AuthCentral.Web
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            services.AddAutoMapper();
 
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
@@ -92,6 +98,9 @@ namespace AuthCentral.Web
                         },
                     });
             });
+
+            services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IClientRepository, ClientRepository>();
 
             var builder = services.AddIdentityServer(options =>
                 {

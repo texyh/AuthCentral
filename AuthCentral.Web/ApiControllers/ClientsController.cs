@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthCentral.Core.Models;
+using AuthCentral.Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,39 +12,46 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthCentral.Web.ApiControllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Produces("application/json")]
+    [Route("api/clients")]
     public class ClientsController : Controller
     {
-        // GET: api/values
+        private readonly IClientService _clientService;
+
+        public ClientsController(IClientService clientService)
+        {
+            _clientService = clientService;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<Client>> GetClients()
         {
-            return new string[] { "value1", "value2", "value3" };
+            return await _clientService.GetClientsAsync();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet, Route("{id:min(1)}")]
+        public async Task<Client> GetClient(int id)
         {
-            return "value";
+            return await _clientService.GetClientAsync(id);
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<int> CreateClient([FromBody]Client client)
         {
+            return await _clientService.SaveClientAsync(client);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        /// <summary>
+        /// Updates Clients
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="client"></param>
+        /// <returns></returns>
+        [HttpPut, Route("{id:min(1)}")]
+        public async Task UpdateClient(int id, [FromBody]Client client)
         {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            client.Id = id;
+            await _clientService.SaveClientAsync(client);
         }
     }
 }
