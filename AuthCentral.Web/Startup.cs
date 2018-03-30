@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -52,6 +53,14 @@ namespace AuthCentral.Web
 
             services.AddMvc();
 
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = AppConfig.ServerUrl;
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = "authCentralApi";
+                });
+
             services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new Info
@@ -67,6 +76,21 @@ namespace AuthCentral.Web
                         Url = string.Empty
                     }
                 });
+            });
+
+            services.ConfigureSwaggerGen(opt =>
+            {
+                opt.AddSecurityDefinition("auth2_security",
+                    new OAuth2Scheme
+                    {
+                        Type = "oauth2",
+                        Description = "OAuth2 client credentials flow",
+                        Flow = "implicit",
+                        AuthorizationUrl = AppConfig.AuthorizationUrl,
+                        Scopes = new Dictionary<string, string> {
+                            { "authCentralApi", "Auth Central API" }
+                        },
+                    });
             });
 
             var builder = services.AddIdentityServer(options =>

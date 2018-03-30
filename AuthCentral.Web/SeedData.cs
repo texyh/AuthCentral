@@ -29,22 +29,22 @@ namespace AuthCentral.Web
                     }
                     context.SaveChanges();
                 }
-                //if (!context.IdentityResources.Any())
-                //{
-                //    foreach (var resource in Config.GetIdentityResources())
-                //    {
-                //        context.IdentityResources.Add(resource.ToEntity());
-                //    }
-                //    context.SaveChanges();
-                //}
-                //if (!context.ApiResources.Any())
-                //{
-                //    foreach (var resource in Config.GetApiResources())
-                //    {
-                //        context.ApiResources.Add(resource.ToEntity());
-                //    }
-                //    context.SaveChanges();
-                //}
+                if (!context.IdentityResources.Any())
+                {
+                    foreach (var resource in Config.GetIdentityResources())
+                    {
+                        context.IdentityResources.Add(resource.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
+                if (!context.ApiResources.Any())
+                {
+                    foreach (var resource in Config.GetApiResources())
+                    {
+                        context.ApiResources.Add(resource.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
             }
         }
     }

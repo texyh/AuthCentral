@@ -18,6 +18,10 @@ namespace AuthCentral.Web.Providers
         public static string DbName => Environment.GetEnvironmentVariable("DB_NAME");
 
         public static string DbServer => Environment.GetEnvironmentVariable("DB_SERVER");
-        
+
+        public static string AuthorizationUrl => Environment.GetEnvironmentVariable("AUTH_URL");
+
+        public static string ServerUrl => Environment.GetEnvironmentVariable("SERVER_URL");
+
     }
 }
