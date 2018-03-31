@@ -94,7 +94,8 @@ namespace AuthCentral.Web
                         Flow = "implicit",
                         AuthorizationUrl = AppConfig.AuthorizationUrl,
                         Scopes = new Dictionary<string, string> {
-                            { "authCentralApi", "Auth Central API" }
+                            { "authCentralApi", "Auth Central API" },
+                            { "openid", "open id"}
                         },
                     });
             });

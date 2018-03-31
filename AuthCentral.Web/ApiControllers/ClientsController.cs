@@ -52,6 +52,7 @@ namespace AuthCentral.Web.ApiControllers
         {
             client.Id = id;
             await _clientService.SaveClientAsync(client);
+            
         }
     }
 }
