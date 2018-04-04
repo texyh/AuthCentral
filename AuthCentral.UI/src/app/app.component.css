@@ -1,11 +1,9 @@
-body{
-    padding: 0px;
-    margin: 0px;
-}
+
 .container-1{
-    
     background-color: #2D323F;
-    height: 500px;
+    height:100%;
+    position: fixed;
+    bottom: 0;
 }
 
 .box1 ul{
@@ -41,6 +39,10 @@ body{
 }
 .container-2{
     background-color: darkgrey;
-    height: 500px;
+}
 
+.sidebar{
+    width:25%;
+    height:100%;
+    background:gray;
 }

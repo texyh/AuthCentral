@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\r\n.container-1{\r\n    background-color: #2D323F;\r\n    height:100%;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n\r\n.box1 ul{\r\n    display:block; \r\n    width: 100%;\r\n    padding: 10px 0px 10px 0px;\r\n    text-align: left;    \r\n}\r\n\r\n.box1 ul li{\r\n    display:block;\r\n    border: none; \r\n    height: 40px;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n     \r\n}\r\n\r\n.box1 ul li a{\r\n    text-decoration: none;\r\n    list-style: none;\r\n    color: white;\r\n    display: block;\r\n    padding-top:7px;\r\n    padding-bottom: 7px;\r\n    padding-left: 7px;\r\n        \r\n   \r\n}\r\n\r\n.box1 ul li a:hover{\r\n    display: block;\r\n    background-color: #424652;\r\n  \r\n   \r\n}\r\n\r\n.container-2{\r\n    background-color: darkgrey;\r\n}\r\n\r\n.sidebar{\r\n    width:25%;\r\n    height:100%;\r\n    background:gray;\r\n}"
 
 /***/ }),
 
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<h2>A Mix of angular and Asp.net Mvc!!!!! emeka </h2>\n"
+module.exports = "<div class=row>\r\n    <div class=\"box col-sm-12\" >\r\n        <div class=\"container-1 col-sm-3 \">\r\n          <div class=\"box1\">\r\n              <ul>\r\n                  <li><a href=\"#\"> Dashboard </a></li>\r\n                  <li><a href=\"#\"> Dashboard</a> </li>\r\n                  <li><a href=\"#\"> Dashboard </a></li>\r\n      \r\n              </ul>\r\n          </div>\r\n        </div>\r\n          <div class=\"container-2 col-sm-9\">\r\n      \r\n          </div>\r\n      </div>\r\n      \r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
