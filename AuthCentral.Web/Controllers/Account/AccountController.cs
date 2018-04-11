@@ -23,7 +23,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AuthCentral.Web
 {
-    [SecurityHeaders]
+    //[SecurityHeaders]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

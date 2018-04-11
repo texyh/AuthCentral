@@ -23,7 +23,7 @@ namespace AuthCentral.Web
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("authCentralApi", "Auth Central Api")
             };
         }
 
@@ -35,30 +35,54 @@ namespace AuthCentral.Web
             {
                 new Client
                 {
-                    ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-
-                    ClientSecrets = 
+                    ClientId = "Auth.Central.Swagger.Dev",
+                    ClientName = "Auth Central Swagger For Development",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+                    RedirectUris = { "https://localhost:44372/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { "https://localhost:44372/swagger" },
+                    //AllowedCorsOrigins = { "http://localhost:6003" },
+                    AllowedScopes =
                     {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = { "api1" }
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "authCentralApi"
+                    }
+                },
+
+                new Client
+                {
+                    ClientId = "Auth.Central.Swagger",
+                    ClientName = "Auth Central Swagger For Production",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+                    RedirectUris = { "https://authcentral.herokuapp.com/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { "https://authcentral.herokuapp.com/swagger" },
+                    //AllowedCorsOrigins = { "http://localhost:6003" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "authCentralApi"
+                    }
                 },
 
                 // resource owner password grant client
-                new Client
-                {
-                    ClientId = "ro.client",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                //new Client
+                //{
+                //    ClientId = "ro.client",
+                //    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
-                    ClientSecrets = 
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = { "api1" }
-                },
+                //    ClientSecrets = 
+                //    {
+                //        new Secret("secret".Sha256())
+                //    },
+                //    AllowedScopes = { "api1" }
+                //},
 
-                // OpenID Connect hybrid flow and client credentials client (MVC)
+                //// OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client
                 {
                     ClientId = "mvc",
@@ -67,7 +91,7 @@ namespace AuthCentral.Web
 
                     RequireConsent = true,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AuthCentral.Web
 {
-    [SecurityHeaders]
+    //[SecurityHeaders]
     public class HomeController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;

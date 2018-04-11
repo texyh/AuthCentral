@@ -1,0 +1,37 @@
+ul.side-nav {
+    background-color: #2D323F;
+    height:100%;
+    position: fixed;
+}
+
+
+.side-nav {
+    display:block; 
+    width: 25%;
+    padding: 10px 0px 10px 0px;
+    text-align: left;    
+}
+.side-nav  li{
+    display:block;
+    
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+     
+}
+.side-nav  li a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    display: block;
+    padding-top:7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+        
+   
+}
+.side-nav  li a:hover{
+    display: block;
+    background-color: #424652;
+  
+}
