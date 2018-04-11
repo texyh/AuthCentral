@@ -1,4 +1,4 @@
-﻿body {
+﻿.body {
   margin-top: 65px;
 }
 .navbar-header {
@@ -93,9 +93,4 @@
 }
 .navigation a:hover {
   background-color: #317ABE !important;
-}
-html,
-body {
-  height: 100%;
-  width: 100%;
 }
