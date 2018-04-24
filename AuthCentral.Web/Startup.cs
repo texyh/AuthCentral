@@ -57,6 +57,15 @@ namespace AuthCentral.Web
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            services.AddCors(x =>
+            {
+                x.AddPolicy("mycorspolicy", p =>
+                {
+                    p.AllowAnyOrigin();
+                    p.AllowAnyHeader();
+                    p.AllowAnyMethod();
+                });
+            });
             services.AddAutoMapper();
 
             services.AddAuthentication("Bearer")
@@ -155,6 +164,7 @@ namespace AuthCentral.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -164,7 +174,7 @@ namespace AuthCentral.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseCors("mycorspolicy");
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {

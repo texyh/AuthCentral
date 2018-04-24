@@ -12,9 +12,9 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
-  <Target Name="NgDebug" BeforeTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+  <!--<Target Name="NgDebug" BeforeTargets="Build" Condition="'$(Configuration)' == 'Debug'">
     <Exec WorkingDirectory="$(SolutionDir)AuthCentral.UI" Command="ng build -ec" />
-  </Target>
+  </Target>-->
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />

@@ -1,0 +1,16 @@
+<div [ngClass]="{backdrop: visibleStatus}"></div>
+<aside class="container sidebar" *ngIf="visibleStatus">
+    <div class="aside-header">
+        <button (click)="close()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ng-content select="[xaside-header]"></ng-content>                    
+        <h3 class="aside-title">{{title}}</h3>
+    </div>
+    <div class="aside-body">
+        <ng-content select="[xaside-body]"></ng-content>
+    </div>
+    <div class="aside-footer">
+        <ng-content select="[xaside-footer]"></ng-content>        
+    </div>
+</aside>

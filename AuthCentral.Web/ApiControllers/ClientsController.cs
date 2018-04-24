@@ -5,14 +5,16 @@ using System.Threading.Tasks;
 using AuthCentral.Core.Models;
 using AuthCentral.Core.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AuthCentral.Web.ApiControllers
 {
-    [Authorize]
+    //[Authorize]
     [Produces("application/json")]
+    [EnableCors("mycorspolicy")]
     [Route("api/clients")]
     public class ClientsController : Controller
     {

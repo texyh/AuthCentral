@@ -27,9 +27,7 @@ namespace AuthCentral.Core.Models
         public bool AllowPlainTextPkce => false;
 
         public bool AllowRememberConsent { get; set; }
-
-        public ICollection<string> AllowedGrantTypes { get; set; }
-
+        
         public bool AlwaysIncludeUserClaimsInIdToken => true;
 
         public bool AlwaysSendClientClaims => true;
