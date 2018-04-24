@@ -1,3 +1,26 @@
-<p>
-  clients works!
-</p>
+<p>Clients</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Identifier</th>
+        <th>Enabled</th>
+        <th>url</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client.name}}</td>
+      <td>{{client.identifier}}</td>
+      <td>{{client.enabled}}</td>
+      <td>{{client.uri}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <button (click)="open()">Open</button> -->
+
+<app-clientaside>
+
+</app-clientaside>

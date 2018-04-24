@@ -10,7 +10,10 @@ import { ClientsComponent } from './clients/clients.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { UsersComponent } from './users/users.component';
 import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import {HttpClientModule} from '@angular/common/http';
+import { ClientAsideComponent } from './common/widgets/clientaside/clientaside.component'
+import { AsideComponent } from './common/widgets/aside/aside.component';
+import { ClientService } from './common/services/client.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@a
     NavComponent,
     ClientsComponent,
     ResourcesComponent,
-    UsersComponent
+    UsersComponent,
+    ClientAsideComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
@@ -30,11 +35,13 @@ import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@a
         { path: 'users', component: UsersComponent },        
         { path: '**', redirectTo: 'clients' }
       
-    ])
+    ]),
+    HttpClientModule
     
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    ClientService
   ],
   bootstrap: [AppComponent]
 })
