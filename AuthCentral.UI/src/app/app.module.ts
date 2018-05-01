@@ -1,19 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 
 
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './layout/app.component';
-import { ClientsComponent } from './clients/clients.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { UsersComponent } from './users/users.component';
 import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import { ClientAsideComponent } from './common/widgets/clientaside/clientaside.component'
-import { AsideComponent } from './common/widgets/aside/aside.component';
-import { ClientService } from './common/services/client.service';
+import { AsideComponent } from './shared/aside/aside.component';
+import { ClientsComponent } from './clients/clientList/clients.component';
+import { ClientAsideComponent } from './clients/clientaside/clientaside.component';
+import { ClientService } from './clients/services/client.service';
+import { ClientdetailsComponent } from './clients/clientdetails/clientdetails.component';
+import { ClientscopesComponent } from './clients/clientscopes/clientscopes.component';
+import { ClientrolesComponent } from './clients/clientroles/clientroles.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ClientService } from './common/services/client.service';
     ResourcesComponent,
     UsersComponent,
     ClientAsideComponent,
-    AsideComponent
+    AsideComponent,
+    ClientdetailsComponent,
+    ClientscopesComponent,
+    ClientrolesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,9 @@ import { ClientService } from './common/services/client.service';
         { path: '**', redirectTo: 'clients' }
       
     ]),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
     
   ],
   providers: [

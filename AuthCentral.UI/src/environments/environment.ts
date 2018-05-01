@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:44372/"
+  apiUrl: "https://localhost:44372/",
+  apiUrl2: "https://authcentraldev.herokuapp.com/"
 };

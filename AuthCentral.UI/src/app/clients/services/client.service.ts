@@ -11,10 +11,14 @@ export class ClientService {
 
     constructor(private _http: HttpClient){}
 
-    public getClients() : Observable<Client[]> {
-        console.log(this.apiRoot);
+    getClients() : Observable<Client[]> {
         return this._http.get<Client[]>(`${this.apiRoot}${this.baseUrl}`);
     }
+
+    getClient(id : number) :Observable<Client> {
+        return this._http.get<Client>(`${this.apiRoot}${this.baseUrl}/${id}`)
+    }
+    
     
     
 }

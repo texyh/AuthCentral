@@ -1,0 +1,33 @@
+<form>
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label>Name</label>
+      <input name="name" [(ngModel)]="clientDetail.name" class="form-control" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>Identifier</label>
+      <input name="identifier" [(ngModel)]="clientDetail.identifier" class="form-control" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Url</label>
+      <input name="uri" [(ngModel)]="clientDetail.uri" class="form-control" />
+    </div>
+  </div>
+
+</form>
+
+      <div class="panel col-md-6 panel-default">
+        <div class="panel-heading">Secrets</div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+      <div class="panel col-md-6 panel-default">
+          <div class="panel-heading">Redirect Uris</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+      </div>

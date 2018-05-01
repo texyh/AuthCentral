@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let client of clients">
-      <td>{{client.name}}</td>
+      <td> <a (click)="showClient(client.id)">{{client.name}}</a></td>
       <td>{{client.identifier}}</td>
       <td>{{client.enabled}}</td>
       <td>{{client.uri}}</td>
@@ -21,6 +21,6 @@
 
 <!-- <button (click)="open()">Open</button> -->
 
-<app-clientaside>
+<app-client-aside>
 
-</app-clientaside>
+</app-client-aside>
