@@ -7,7 +7,6 @@ import { Client } from '../models/client.model';
   styleUrls: ['./clientdetails.component.css']
 })
 export class ClientdetailsComponent implements OnInit, OnChanges {
-
   
   @Input()
   public client: Client

@@ -16,18 +16,100 @@
       <input name="uri" [(ngModel)]="clientDetail.uri" class="form-control" />
     </div>
   </div>
-
-</form>
-
-      <div class="panel col-md-6 panel-default">
-        <div class="panel-heading">Secrets</div>
-        <div class="panel-body">
-          Panel content
+  <div class="row">
+      <div class="form-group col-md-6">
+        <label>AbsoluteRefreshTokenLifetime</label>
+        <input name="absoluteRefreshTokenLifetime" [(ngModel)]="clientDetail.absoluteRefreshTokenLifetime" class="form-control" />
+      </div>
+      <div class="form-group col-md-6">
+        <label>AccessTokenLifetime</label>
+        <input name="accessTokenLifetime" [(ngModel)]="clientDetail.accessTokenLifetime" class="form-control" />
+      </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+          <label>AllowAccessTokensViaBrowser</label>
+          <input name="allowAccessTokensViaBrowser" [(ngModel)]="clientDetail.allowAccessTokensViaBrowser" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+          <label>AllowOfflineAccess</label>
+          <input name="allowOfflineAccess" [(ngModel)]="clientDetail.allowOfflineAccess" class="form-control" />
         </div>
       </div>
-      <div class="panel col-md-6 panel-default">
-          <div class="panel-heading">Redirect Uris</div>
-          <div class="panel-body">
-            Panel content
+      <div class="row">
+          <div class="form-group col-md-6">
+            <label>AllowRememberConsent</label>
+            <input name="allowRememberConsent" [(ngModel)]="clientDetail.allowRememberConsent" class="form-control" />
+          </div>
+          <div class="form-group col-md-6">
+            <label>Enabled</label>
+            <input name="enabled" [(ngModel)]="clientDetail.enabled" class="form-control" />
           </div>
       </div>
+      <div class="row">
+          <div class="form-group col-md-6">
+            <label>LogoUri</label>
+            <input name="logoUri" [(ngModel)]="clientDetail.logoUri" class="form-control" />
+          </div>
+          <div class="form-group col-md-6">
+            <label>RefreshTokenExpiration</label>
+            <input name="refreshTokenExpiration" [(ngModel)]="clientDetail.refreshTokenExpiration" class="form-control" />
+          </div>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-6">
+            <label>RequireClientSecret</label>
+            <input name="requireClientSecret" [(ngModel)]="clientDetail.requireClientSecret" class="form-control" />
+          </div>
+          <div class="form-group col-md-6">
+            <label>RequireConsent</label>
+            <input name="requireConsent" [(ngModel)]="clientDetail.requireConsent" class="form-control" />
+          </div>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-6">
+            <label>SlidingRefreshTokenLifetime</label>
+            <input name="slidingRefreshTokenLifetime" [(ngModel)]="clientDetail.slidingRefreshTokenLifetime" class="form-control" />
+          </div>
+      </div>
+
+</form>
+<hr/>
+<div class="row">
+    <div class="col-md-6 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">Secrets</div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel  panel-default">
+            <div class="panel-heading">Redirect Uris</div>
+            <div class="panel-body">
+              Panel content
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">Secrets</div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel  panel-default">
+            <div class="panel-heading">Redirect Uris</div>
+            <div class="panel-body">
+              Panel content
+            </div>
+        </div>
+    </div>
+</div>
+      
