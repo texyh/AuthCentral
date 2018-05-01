@@ -1,0 +1,34 @@
+<app-aside [title]="'Client'">
+    <div xaside-header class="pull-right">
+        <!-- <button  type="button" class="close" aria-label="edit">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </button> -->
+    </div>
+    <div xaside-body>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs client-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Scopes</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Roles</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <app-clientdetails [client]="client"></app-clientdetails>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <app-clientscopes></app-clientscopes>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <app-clientroles></app-clientroles>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div xaside-footer>
+        <button>save</button>
+    </div>
+
+</app-aside>

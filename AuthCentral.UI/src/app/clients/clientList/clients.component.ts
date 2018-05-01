@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientAsideComponent } from '../common/widgets/clientaside/clientaside.component';
-import { ClientService } from '../common/services/client.service';
-import { Client } from '../common/models/client.model';
+import { ClientAsideComponent } from '../clientaside/clientaside.component';
+import { Client } from '../models/client.model';
+import { ClientService } from '../services/client.service';
+
+
 
 @Component({
   selector: 'app-clients',
@@ -19,16 +21,19 @@ export class ClientsComponent implements OnInit {
 
   constructor(private _clientService: ClientService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
       this._clientService.getClients()
           .subscribe( (clients: Client[]) => {
             this.clients = clients
-            console.log(this.clients)
           })
 
   }
 
-  open() {
+  showClient(id: number): void {
+    this.clientAside.show(id);
+  }
+
+  open(): void {
     this.clientAside.open();
   }
 

@@ -3,9 +3,9 @@
 }
 
 .sidebar {
-    width: 45em;
+    width: 50em;
     position: fixed;
-    top: 50px;
+    top: 0;
     /* bottom: 20px; */
     right: 0;
     background-color: #fff;
